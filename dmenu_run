@@ -1,0 +1,2 @@
+#!/bin/sh
+echo "$( dmenu_path | dmenu "$@") & exit"| ${SHELL:-"/bin/sh"} &
