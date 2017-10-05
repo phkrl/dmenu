@@ -1,2 +1,2 @@
 #!/bin/sh
-exec $(echo "$( dmenu_path | dmenu "$@")")
+exec $( dmenu_path | dmenu "$@")
