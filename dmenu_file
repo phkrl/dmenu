@@ -1,0 +1,7 @@
+#!/bin/bash
+
+OBJ=.
+while [[ -d $OBJ ]]; do
+	OBJ=$OBJ/$(ls -a $OBJ | dmenu "$@")
+	done
+exec xdg-open $OBJ
