@@ -2,6 +2,7 @@
 
 OBJ=.
 while [[ -d $OBJ ]]; do
-	OBJ=$OBJ/$(ls -a $OBJ | dmenu "$@")
+	cd $OBJ
+	OBJ=$(ls -a . | dmenu "$@")
 	done
 exec xdg-open $OBJ
