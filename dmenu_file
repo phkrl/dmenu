@@ -5,4 +5,4 @@ while [[ -d $OBJ ]]; do
 	cd $OBJ
 	OBJ=$(ls -a . | dmenu "$@")
 	done
-exec xdg-open $OBJ
+exec xdg-open "$OBJ"
