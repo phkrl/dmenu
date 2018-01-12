@@ -2,7 +2,15 @@
 
 OBJ=.
 while [[ -d $OBJ ]]; do
-	cd $OBJ
+	cd "$OBJ"
 	OBJ=$(ls -a . | dmenu "$@")
+	if [[ $OBJ == . ]]
+	then
+		break
+	fi
 	done
-exec xdg-open "$OBJ"
+if [[ -e $(pwd)/$OBJ ]]
+then
+	echo $(pwd)/$OBJ
+else echo $OBJ
+fi
