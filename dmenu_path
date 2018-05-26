@@ -1,8 +1,9 @@
 #!/bin/sh
 cache=/run/user/$UID/.dmenu_cache
 IFS=:
-if stest -dqr -n "$cache" $PATH; then
-	stest -flx $PATH | sort -u | tee "$cache"
+if stest -qer "$cache"; then
+	cat "$cache"
 else
+	stest -flx $PATH | sort -u > "$cache"
 	cat "$cache"
 fi
